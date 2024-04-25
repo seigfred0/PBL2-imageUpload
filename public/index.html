@@ -6,12 +6,10 @@
     <title>Image Upload</title>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+   
     <script src="./app.js"></script>
 </head>
-<body class="bg-[#E5E7EB]">
+<body class="bg-[#E5E7EB] font-['Inter',sans-serif]">
 
     <nav class="flex p-10 justify-between content-center border-b border-slate-400 ">  
             <img class="w-40 max-w-none ml-10" src="./assets/logo.svg" alt="">
@@ -22,9 +20,14 @@
             </div>
     </nav>
 
-    <section>
-
-
+    <section class="flex justify-center ">
+        <div id="dropArea" ondrop="handleDrop(event)" ondragleave="handleLeave(event)" class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl ">
+            <div id="dropIndicator" class="w-full h-full  rounded-md border-2 border-slate-300 border-dashed flex flex-col items-center justify-center">
+                <img class="w-8 mb-5" src="./assets/exit.svg" alt="">
+                <p class="font-semibold">Drag & drop a file or <span class="text-[#3662E3] hover:cursor-pointer">browse files</span></p>
+                <p class="text-xs mt-2">JPG, PNG or GIF - Max file size 2MB</p>
+            </div>
+        </div>
     </section>
     <!-- <h1>File Upload</h1> -->
     <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
