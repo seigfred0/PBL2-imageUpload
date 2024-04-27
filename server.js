@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 app.post('/upload', upload.single('file'), (req, res) => {
     console.log('received')
     res.json({ message: 'File uploaded successfully!' });
+    
 })
 
 app.listen(port, () => {

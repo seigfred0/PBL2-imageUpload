@@ -20,15 +20,37 @@
             </div>
     </nav>
 
-    <section class="flex justify-center ">
+    <section class="flex justify-center " id="dropSection">
         <div id="dropArea" ondrop="handleDrop(event)" ondragleave="handleLeave(event)" class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl ">
-            <div id="dropIndicator" class="w-full h-full  rounded-md border-2 border-slate-300 border-dashed flex flex-col items-center justify-center">
+            <div id="dropIndicator" class="w-full h-full  rounded-md border-2  border-dashed flex flex-col items-center justify-center border-slate-300">
                 <img class="w-8 mb-5" src="./assets/exit.svg" alt="">
                 <p class="font-semibold">Drag & drop a file or <span class="text-[#3662E3] hover:cursor-pointer">browse files</span></p>
                 <p class="text-xs mt-2">JPG, PNG or GIF - Max file size 2MB</p>
             </div>
         </div>
     </section>
+
+    <section class="flex justify-center " id="loaderSection">
+        <div id="loading" class="w-5/12 h-15 mt-20 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl pt-7 pb-7" >
+            <div class="flex flex-col items-center justify-center text-sm">
+
+                <p><span class="font-bold">Uploading</span>, please wait..</p>
+                <div class="w-full max-w-80 mt-4 h-2 bg-gray-300 rounded-md overflow-hidden">
+                    <div id="loader" class="h-full bg-blue-500 w-0" ></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="previewSection">
+
+    </section>
+
+
+
+    
+
+
     <!-- <h1>File Upload</h1> -->
     <!-- <form action="/upload" method="POST" enctype="multipart/form-data">
         <input type="file" name="file" required>
