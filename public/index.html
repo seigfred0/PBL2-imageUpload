@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,32 +9,32 @@
    
    
 </head>
-<body class="bg-[#E5E7EB] font-['Inter',sans-serif]">
+<body class="bg-[#E5E7EB] dark:bg-[#121826] font-['Inter',sans-serif]">
 
-    <nav class="flex p-10 justify-between content-center border-b border-slate-400 ">  
-            <img class="w-40 max-w-none ml-10" src="./assets/logo.svg" alt="">
+    <nav class="flex p-10 justify-between content-center border-b border-slate-400 dark:border-gray-800">  
+            <img id="logo" class="w-40 max-w-none ml-10 dark:text-slate-100" src="./assets/logo.svg" alt="">
 
-            <div class="flex content-center border-slate-400 border rounded p-1 mr-10 bg-[#F9FAFB]">
-                <img class="w-7" src="./assets/Moon_fill.svg" alt="">
+            <div onclick="darkMode()"  class="flex cursor-pointer content-center border-slate-400 border rounded-xl p-2 mr-10 bg-[#F9FAFB] dark:bg-[#4D5562]">
+                <img id="darkMode" class="w-6" src="./assets/Moon_fill.svg" alt="">
 
             </div>
     </nav>
 
     <section class="flex justify-center " id="dropSection">
-        <div id="dropArea" ondrop="handleDrop(event)" ondragleave="handleLeave(event)" class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl ">
-            <div id="dropIndicator" class="w-full h-full  rounded-md border-2  border-dashed flex flex-col items-center justify-center border-slate-300">
+        <div id="dropArea" ondrop="handleDrop(event)" ondragleave="handleLeave(event)" class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl dark:bg-[#212936]">
+            <div id="dropIndicator" class="w-full h-full  rounded-md border-2  border-dashed flex flex-col items-center justify-center border-slate-300 dark:border-[#4D5562]">
                 <img class="w-8 mb-5" src="./assets/exit.svg" alt="">
-                <p class="font-semibold">Drag & drop a file or <span class="text-[#3662E3] hover:cursor-pointer">browse files</span></p>
-                <p class="text-xs mt-2">JPG, PNG or GIF - Max file size 2MB</p>
+                <p class="font-semibold dark:text-[#F9FAFB]">Drag & drop a file or <span class="text-[#3662E3] hover:cursor-pointer">browse files</span></p>
+                <p class="text-xs mt-2 dark:text-[#E5E7EB]">JPG, PNG or GIF - Max file size 2MB</p>
             </div>
         </div>
     </section>
 
     <section class="flex justify-center " id="loaderSection">
-        <div id="loading" class="w-5/12 h-15 mt-20 mt-56 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl pt-7 pb-7" >
+        <div id="loading" class="w-5/12 h-15 mt-20 mt-56 rounded-md bg-[#F9FAFBCC] p-4 shadow-xl pt-7 pb-7 dark:bg-[#212936]" >
             <div class="flex flex-col items-center justify-center text-sm">
 
-                <p><span class="font-bold">Uploading</span>, please wait..</p>
+                <p><span class="font-bold dark:text-[#F9FAFB]">Uploading</span>, please wait..</p>
                 <div class="w-full max-w-80 mt-4 h-2 bg-gray-300 rounded-md overflow-hidden">
                     <div id="loader" class="h-full bg-blue-500 w-0" ></div>
                 </div>
@@ -43,32 +43,27 @@
     </section>
 
     <section class="flex relative justify-center mb-10"  id="previewSection">
-        <div class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-3 shadow-xl ">
+        <div class="w-5/12 h-96 mt-20 rounded-md bg-[#F9FAFBCC] p-3 shadow-xl dark:bg-[#212936]">
             <img class="w-full h-full rounded-md " src=""  id="preview" alt="image">
         </div>
 
-        <div class="absolute -bottom-10 flex gap-4">
-            <div class="bg-[#3662E3] flex items-center pt-1 pb-1 pr-4 pl-4 rounded-md gap-2">
+        <div class="absolute -bottom-14 flex gap-4 ">
+            <div class="bg-[#3662E3] flex items-center pt-1 pb-1 pr-4 pl-4 rounded-md gap-2 cursor-pointer">
                 <div style="background-image: url(./assets/Link.svg); width: 15px; height: 15px; background-size: cover;"></div>
                 <a href="#">
                     <button class=" text-stone-50 text-sm">Share</button>
                 </a>
             </div>
 
-            <div class="bg-[#3662E3] flex items-center pt-1 pb-1 pr-4 pl-4 rounded-md gap-2">
+            <div class="bg-[#3662E3] flex items-center pt-1 pb-1 pr-4 pl-4 rounded-md gap-2 cursor-pointer">
+                <a id="downloadLink" class="flex items-center gap-2" href="" download>
                 <div style="background-image: url(./assets/download.svg); width: 15px; height: 15px; background-size: cover;"></div>
-                <a href="image.jpg" download="downloaded_image.jpg">
-                    <button class=" text-stone-50 text-sm">Download</button>
+               
+                <button class=" text-stone-50 text-sm">Download</button>
                 </a>
             </div>
         </div>
-
     </section>
-
-
-
-    
-
 
     <!-- <h1>File Upload</h1> -->
     <!-- <form action="/upload" method="POST" enctype="multipart/form-data">

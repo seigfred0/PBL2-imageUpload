@@ -94,9 +94,15 @@ function uploadFile(file) {
 }
 
 function setImage(image) {
+
+
   
-     let previewImage = document.getElementById('preview');
-     previewImage.setAttribute('src', image)
+    let previewImage = document.getElementById('preview');
+    previewImage.setAttribute('src', image)
+
+
+    const downloadLink = document.getElementById('downloadLink');
+    downloadLink.setAttribute('href', image);
 
      setTimeout(() => {
         console.log(previewImage)
@@ -135,3 +141,19 @@ function unhighlight(e) {
 }
 
 
+function darkMode() {
+    const logo = document.getElementById('logo');
+    const darkIcon = document.getElementById('darkMode');
+    console.log('Toggling dark mode');
+    const body = document.body;
+    body.classList.toggle('dark');
+    
+    if (body.classList.contains('dark')) {
+        logo.setAttribute('src', "./assets/logoDark.svg")
+        darkIcon.setAttribute('src', "./assets/Sun_fill.svg")
+    } else {
+        logo.setAttribute('src', "./assets/logo.svg")
+        darkIcon.setAttribute('src', "./assets/Moon_fill.svg")
+
+    }
+}
